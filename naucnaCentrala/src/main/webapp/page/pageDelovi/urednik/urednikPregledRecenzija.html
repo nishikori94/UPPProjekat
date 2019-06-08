@@ -1,0 +1,82 @@
+<div class="container">
+	<nav
+		class="navbar navbar-expand-lg navbar-light shadow shadow-bottom p-3 mb-5 bg-white rounded">
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active"><a class="nav-link"
+					ng-click="toPrijaviRad()">Odobravanje radova</a></li>
+				<li><a class="nav-link" ng-click="toRadoviZaIspravku()">Ispravak
+						radova</a></li>
+				<li><a class="nav-link" ng-click="toPregledRecenzija()">Pregled
+						recenzija</a></li>
+				<li><a class="nav-link" ng-click="logout()">Logout</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="row justify-content-center mb-5">
+		<h2 class="text-center">{{recenzije[0].rad.naziv}}</h2>
+		<button class="ml-5 btn btn-primary" name='preuzmiRad'
+			ng-click="preuzmiRad(recenzije[0].rad.naziv)">Preuzmi rad</button>
+	</div>
+
+	<h3 class="text-center">Recenzije</h3>
+
+	<div class="row justify-content-center"><div class="col-5 m-1 p-1 gray" ng-repeat="recenzija in recenzije"> 
+		<div class="review m-3 p-3">
+			<p>Naziv rada:</p>
+			<h3>{{recenzija.rad.naziv}}</h3>
+			<label>Recenzent</label>
+			<p class="bold">{{recenzija.recenzent.email}}</p>
+			<p>Komentar:</p>
+			<p class="bold">{{recenzija.komentar}}</p>
+			<p>Predlog ocene:</p>
+			<p class="bold">{{recenzija.ocena}}</p>
+		</div></div>
+	</div>
+
+	<div class="row justify-content-center mb-">
+		<div class="col-6">
+			<div ng-repeat="property in properties.formFields">
+				<div
+					ng-if="property.type.name=='string' && property.id!='putanjaFajla'"
+					class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="inputGroup-sizing-default">{{property.label}}</span>
+					</div>
+					<input type="text" ng-model="model[property.id]"
+						name="property.label" required="" class="form-control"
+						aria-label="Default" aria-describedby="inputGroup-sizing-default">
+				</div>
+
+				<label ng-if="property.type.name!='string'">{{property.label}}:</label>
+				<input ng-if="property.type.name=='boolean'"
+					ng-model="model[property.id]" class="form-control" type="checkbox"
+					name="property.label"> <input
+					ng-if="property.type.name=='long'" ng-model="model[property.id]"
+					class="form-control" type="number" name="property.label"> <br
+					ng-if="property.type.name=='enum'">
+				<div ng-if="property.type.name=='enum'" class="form-group">
+					<select class="form-control"
+						ng-options="g for (key, g) in property.type.values"
+						ng-model="model[property.id]"></select>
+				</div>
+				<label ng-if="property.id=='putanjaFajla'">Upload-ujte rad:</label>
+				<section class="mb-5" ng-if="property.id=='putanjaFajla'"
+					id="uploadMedia">
+					<input type="file" class="form-control-file" name="fileMedia"
+						id="fileMedia"></input>
+				</section>
+			</div>
+
+			<input class="btn btn-primary btn-block" ng-click="potvrdiOcenu()"
+				value="Potvrdi ocenu"></input>
+		</div>
+	</div>
+</div>

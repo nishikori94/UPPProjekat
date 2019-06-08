@@ -1,0 +1,54 @@
+<div class="container">
+	<nav
+		class="navbar navbar-expand-lg navbar-light shadow shadow-bottom p-3 mb-5 bg-white rounded">
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active"><a class="nav-link"
+					ng-click="logout()">Logout</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="row justify-content-center mt-5">
+		<div class="col-6">
+			<form name='f' method='POST' ng-submit="submit()">
+				<h1 class="text-center">Prijavi rad</h1>
+				<div ng-repeat="property in properties.formFields">
+
+					<div
+						ng-if="property.type.name=='string' && property.id!='putanjaFajla'"
+						class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="inputGroup-sizing-default">{{property.label}}</span>
+						</div>
+						<input type="text" ng-model="model[property.id]"
+							name="property.label" required="" class="form-control"
+							aria-label="Default" aria-describedby="inputGroup-sizing-default">
+					</div>
+
+					<label ng-if="property.type.name!='string'">Naucna oblast:</label>
+					<input ng-if="property.type.name=='boolean'"
+						ng-model="model[property.id]" class="form-control" type="checkbox"
+						name="property.label"> <input
+						ng-if="property.type.name=='long'" ng-model="model[property.id]"
+						class="form-control" type="number" name="property.label">
+					<br ng-if="property.type.name=='enum'"> <div ng-if="property.type.name=='enum'" class="form-group"><select  class="form-control"
+						ng-options="g for (key, g) in property.type.values"
+						ng-model="model[property.id]"></select></div>
+					<label ng-if="property.id=='putanjaFajla'">Upload-ujte rad:</label>
+					<section class="mb-5" ng-if="property.id=='putanjaFajla'" id="uploadMedia">
+						<input type="file" class="form-control-file" name="fileMedia" id="fileMedia"></input>
+					</section>
+				</div>
+				<input class="btn btn-primary btn-block" type="submit"
+					value="Prijavi rad"></input>
+			</form>
+		</div>
+	</div>
+</div>

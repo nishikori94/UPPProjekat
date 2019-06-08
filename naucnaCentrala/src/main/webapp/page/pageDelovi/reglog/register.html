@@ -1,0 +1,36 @@
+<div class="container">
+	<div class="row justify-content-center mt-5">
+		<div class="col-6">
+			<form name='f' method='POST' ng-submit="submit()">
+				<h1 class="text-center" style="height: 70px;">Registruj se</h1>
+				<div ng-repeat="property in properties.formFields">
+					<label ng-if="property.type.name!='string'">{{property.label}}</label>
+					<div ng-if="property.type.name=='string'" class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="inputGroup-sizing-default">{{property.label}}</span>
+						</div>
+						<input type="text" ng-if="property.label!='Password'"
+							ng-model="model[property.id]" name="property.label" required=""
+							class="form-control" aria-label="Default"
+							aria-describedby="inputGroup-sizing-default"> <input
+							type="password" ng-if="property.label=='Password'"
+							ng-model="model[property.id]" name="property.label" required=""
+							class="form-control" aria-label="Default"
+							aria-describedby="inputGroup-sizing-default">
+					</div>
+					<input ng-if="property.type.name=='boolean'"
+						ng-model="model[property.id]" class="form-control" type="checkbox"
+						name="property.label" required="" maxlength="30" minlength="4">
+					<input ng-if="property.type.name=='long'"
+						ng-model="model[property.id]" class="form-control" type="number"
+						name="property.label" required="" maxlength="30" minlength="4">
+				</div>
+				<input class="btn btn-primary btn-block" type="submit"
+					value="Registruj se"></input>
+				<p class="text-center">
+					<a ng-click="toLogin()" class="btn">Ulogujte se</a>
+				</p>
+			</form>
+		</div>
+	</div>
+</div>

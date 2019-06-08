@@ -1,0 +1,51 @@
+#lakisrc {
+	margin: auto;
+	border: 3px solid rgb(150, 196, 49);
+	padding: 10px;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+.jednakol {
+	border: 2px solid rgb(150, 196, 49);
+	padding: 10px;
+}
+
+span {
+	min-width: 100px;
+}
+
+.shadow-bottom {
+	box-shadow: 0px 15px 10px -15px rgba(0,0,0,.15)!important;	
+}
+
+.nav-link{
+	color:black!important;
+	cursor: pointer!important;
+}
+.btn{
+	cursor: pointer!important;
+}
+
+.bold{
+	font-weight:bold;
+}
+
+.vert-center{
+	align-items: center;
+    display: flex;
+}
+
+.gray{
+	background: #D3D3D3;
+}
+
+.review{
+	background: white;
+}
+
+.review, .gray{
+	border-radius: 15px;
+}

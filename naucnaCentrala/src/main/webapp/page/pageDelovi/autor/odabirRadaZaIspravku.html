@@ -1,0 +1,40 @@
+<div class="container">
+	<nav
+		class="navbar navbar-expand-lg navbar-light shadow shadow-bottom p-3 mb-5 bg-white rounded">
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active"><a class="nav-link"
+					ng-click="logout()">Logout</a></li>
+			</ul>
+		</div>
+	</nav>
+	<h4>Odaberite rad koji zelite da ispravite:</h4>
+	<label>Prvo preuzmite rad, a nakon toga ispravljeni rad
+		upload-ujte i posaljite.</label>
+	<div class="mt-3" ng-repeat="task in taskovi">
+		<div class="row shadow-bottom pb-3 mt-3">
+			<div class="col-3 vert-center">
+				<label>{{task.rad}}</label>
+			</div>
+			<div class="col-3 vert-center">
+				<button class=" ml-5 btn btn-primary" name='preuzmiRad'
+					ng-click="preuzmiRad(task)">Preuzmi rad</button>
+			</div>
+			<div class="col-3">
+				<label>Upload:</label><input type="file" name="fileMedia"
+					id="fileMedia"></input>
+			</div>
+			<div class="col-3 vert-center">
+				<button class=" ml-5 btn btn-primary" name='preuzmiRad'
+					ng-click="posaljiRad(task)">Posalji rad</button>
+			</div>
+		</div>
+	</div>
+</div>

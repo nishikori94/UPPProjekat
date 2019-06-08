@@ -1,0 +1,24 @@
+<div class="container">
+	<nav
+		class="navbar navbar-expand-lg navbar-light shadow shadow-bottom p-3 mb-5 bg-white rounded">
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active"><a class="nav-link"
+					ng-click="logout()">Logout</a></li>
+			</ul>
+		</div>
+	</nav>
+	<h4>Odaberite casopis u kojem zelite da objavite rad:</h4>
+	<div ng-repeat="casopis in casopisi" class="m-5">
+		<label>- {{casopis.naziv}}</label>
+		<button class=" ml-5 btn btn-primary" name='odaberiCasopis' ng-click="odaberiCasopis(casopis.naziv)">Odaberi
+			Casopis</button>
+	</div>
+</div>
