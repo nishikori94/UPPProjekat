@@ -16,9 +16,9 @@ insert into Korisnik (ime, prezime, drzava, grad, email, username, password, tip
 
 --urednici id-9,10,11
 --prvi sledeci je glavni urednik u svim casopisima (cisto nako)
-insert into Korisnik (ime, prezime, drzava, grad, email, username, password, tip_korisnika) values ("Urednik1", "Urednik1", "Srbija", "Novi Sad", "urendik1@mailinator.com", "urednik1", "pass", 1);
-insert into Korisnik (ime, prezime, drzava, grad, email, username, password, tip_korisnika) values ("Urednik2", "Urednik2", "Srbija", "Novi Sad", "urendik2@mailinator.com", "urednik2", "pass", 1);
-insert into Korisnik (ime, prezime, drzava, grad, email, username, password, tip_korisnika) values ("Urednik3", "Urednik3", "Srbija", "Novi Sad", "urendik3@mailinator.com", "urednik3", "pass", 1);
+insert into Korisnik (ime, prezime, drzava, grad, email, username, password, tip_korisnika) values ("Urednik1", "Urednik1", "Srbija", "Novi Sad", "urednik1@mailinator.com", "urednik1", "pass", 1);
+insert into Korisnik (ime, prezime, drzava, grad, email, username, password, tip_korisnika) values ("Urednik2", "Urednik2", "Srbija", "Novi Sad", "urednik2@mailinator.com", "urednik2", "pass", 1);
+insert into Korisnik (ime, prezime, drzava, grad, email, username, password, tip_korisnika) values ("Urednik3", "Urednik3", "Srbija", "Novi Sad", "urednik3@mailinator.com", "urednik3", "pass", 1);
 
 --recenzenti id-12,13,14,15
 insert into Korisnik (ime, prezime, drzava, grad, email, username, password, tip_korisnika) values ("Recenzent5", "Recenzent5", "Srbija", "Novi Sad", "rencenzent5@mailinator.com", "recenzent5", "pass", 2);
@@ -28,9 +28,9 @@ insert into Korisnik (ime, prezime, drzava, grad, email, username, password, tip
 
 --urednici id-16,17,18
 --prvi sledeci je glavni urednik u svim casopisima (cisto nako)
-insert into Korisnik (ime, prezime, drzava, grad, email, username, password, tip_korisnika) values ("Urednik4", "Urednik4", "Srbija", "Novi Sad", "urendik4@mailinator.com", "urednik4", "pass", 1);
-insert into Korisnik (ime, prezime, drzava, grad, email, username, password, tip_korisnika) values ("Urednik5", "Urednik5", "Srbija", "Novi Sad", "urendik5@mailinator.com", "urednik5", "pass", 1);
-insert into Korisnik (ime, prezime, drzava, grad, email, username, password, tip_korisnika) values ("Urednik6", "Urednik6", "Srbija", "Novi Sad", "urendik6@mailinator.com", "urednik6", "pass", 1);
+insert into Korisnik (ime, prezime, drzava, grad, email, username, password, tip_korisnika) values ("Urednik4", "Urednik4", "Srbija", "Novi Sad", "urednik4@mailinator.com", "urednik4", "pass", 1);
+insert into Korisnik (ime, prezime, drzava, grad, email, username, password, tip_korisnika) values ("Urednik5", "Urednik5", "Srbija", "Novi Sad", "urednik5@mailinator.com", "urednik5", "pass", 1);
+insert into Korisnik (ime, prezime, drzava, grad, email, username, password, tip_korisnika) values ("Urednik6", "Urednik6", "Srbija", "Novi Sad", "urednik6@mailinator.com", "urednik6", "pass", 1);
 
 --dodeljivanje naucne oblasti urednicima, redom: 1-Biologija(0), 2-Hemija(1), 3-Matematika(2), Fizika(3)
 insert into Urednik (id, naucna_oblast) values(9, 0);

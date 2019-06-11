@@ -340,18 +340,10 @@
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="SequenceFlow_1dajmt9" sourceRef="ExclusiveGateway_0s5h031" targetRef="Task_0tljzv5" />
     <bpmn:sequenceFlow id="SequenceFlow_1e2ybh3" sourceRef="Task_0z0zm2c" targetRef="ExclusiveGateway_1k4sni1" />
-    <bpmn:serviceTask id="Task_0z0zm2c" name="Placanje clanarine" camunda:class="root.naucnaCentrala.services.PlacanjeClanarine">
+    <bpmn:callActivity id="Task_0z0zm2c" name="Placanje" calledElement="placanje">
       <bpmn:incoming>SequenceFlow_1gflcc4</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1e2ybh3</bpmn:outgoing>
-    </bpmn:serviceTask>
-    <bpmn:boundaryEvent id="BoundaryEvent_0ltw2hh" attachedToRef="Task_0z0zm2c">
-      <bpmn:outgoing>SequenceFlow_0ka0hix</bpmn:outgoing>
-      <bpmn:errorEventDefinition />
-    </bpmn:boundaryEvent>
-    <bpmn:endEvent id="EndEvent_03ukdmv" name="Uplata nije prosla">
-      <bpmn:incoming>SequenceFlow_0ka0hix</bpmn:incoming>
-    </bpmn:endEvent>
-    <bpmn:sequenceFlow id="SequenceFlow_0ka0hix" sourceRef="BoundaryEvent_0ltw2hh" targetRef="EndEvent_03ukdmv" />
+    </bpmn:callActivity>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Glavni">
@@ -771,22 +763,9 @@
         <di:waypoint x="1352" y="306" />
         <di:waypoint x="1146" y="306" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="ServiceTask_0isneqf_di" bpmnElement="Task_0z0zm2c">
+      <bpmndi:BPMNShape id="CallActivity_1alor3j_di" bpmnElement="Task_0z0zm2c">
         <dc:Bounds x="1302" y="181" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BoundaryEvent_109hpll_di" bpmnElement="BoundaryEvent_0ltw2hh">
-        <dc:Bounds x="1384" y="243" width="36" height="36" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="EndEvent_03ukdmv_di" bpmnElement="EndEvent_03ukdmv">
-        <dc:Bounds x="1504" y="243" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="1479" y="286" width="86" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="SequenceFlow_0ka0hix_di" bpmnElement="SequenceFlow_0ka0hix">
-        <di:waypoint x="1420" y="261" />
-        <di:waypoint x="1504" y="261" />
-      </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
