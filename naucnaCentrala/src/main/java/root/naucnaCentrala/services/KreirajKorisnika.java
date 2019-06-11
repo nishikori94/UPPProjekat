@@ -15,7 +15,7 @@ import root.naucnaCentrala.model.TipKorisnika;
 import root.naucnaCentrala.repository.KorisnikRepository;
 
 @Service
-public class MakeUserService implements JavaDelegate {
+public class KreirajKorisnika implements JavaDelegate {
 
 	@Autowired
 	IdentityService identityService;

@@ -11,7 +11,7 @@ import root.naucnaCentrala.model.FormSubmissionDto;
 import java.util.List;
 
 @Service
-public class CheckUniqueService implements JavaDelegate {
+public class ProveraKredencijala implements JavaDelegate {
 
 	@Autowired
 	IdentityService identityService;

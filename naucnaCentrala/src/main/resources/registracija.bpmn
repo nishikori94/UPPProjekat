@@ -37,11 +37,11 @@
       <bpmn:incoming>SequenceFlow_1ou9b9b</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0ryenzb</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:serviceTask id="Task_1pmom14" name="Provera korisnickog imena i lozinke" camunda:class="root.naucnaCentrala.services.CheckUniqueService">
+    <bpmn:serviceTask id="Task_1pmom14" name="Provera korisnickog imena i lozinke" camunda:class="root.naucnaCentrala.services.ProveraKredencijala">
       <bpmn:incoming>SequenceFlow_0ryenzb</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0lwpnx8</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:serviceTask id="Task_0vitg92" name="Cuvanje korisnika" camunda:class="root.naucnaCentrala.services.MakeUserService">
+    <bpmn:serviceTask id="Task_0vitg92" name="Cuvanje korisnika" camunda:class="root.naucnaCentrala.services.KreirajKorisnika">
       <bpmn:incoming>SequenceFlow_1r2xb63</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_18e6zwr</bpmn:outgoing>
     </bpmn:serviceTask>

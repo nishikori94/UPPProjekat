@@ -45,7 +45,7 @@ public class RadService {
 			} else if (temp.getFieldId().equals("apstrakt")) {
 				r.setApstrakt(temp.getFieldValue());
 			} else if (temp.getFieldId().equals("naucnaOblast")) {
-				r.setNaucnaOblast(NaucnaOblast.Matematika);
+				r.setNaucnaOblast(NaucnaOblast.valueOf(temp.getFieldValue()));
 			} else if (temp.getFieldId().equals("autor")) {
 				r.setAutor(korisnikRepository.findKorisnikByUsername(temp.getFieldValue()));
 			} else if (temp.getFieldId().equals("putanjaFajla")) {

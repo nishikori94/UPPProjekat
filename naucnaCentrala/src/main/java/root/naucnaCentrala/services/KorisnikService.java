@@ -7,7 +7,7 @@ import root.naucnaCentrala.repository.KorisnikRepository;
 import root.naucnaCentrala.repository.UrednikRepository;
 
 @Service
-public class UserService {
+public class KorisnikService {
 
     @Autowired
     UrednikRepository urednikRepository;

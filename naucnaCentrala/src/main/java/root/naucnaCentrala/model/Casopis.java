@@ -36,6 +36,9 @@ public class Casopis implements Serializable {
 	@JsonIgnore
 	public List<Recenzent> recenzenti;
 
+	@OneToMany
+	public List<Korisnik> clanovi;
+
 	@Column
 	private Long issn;
 
@@ -46,7 +49,7 @@ public class Casopis implements Serializable {
 	}
 
 	public Casopis(Long id, String naziv, TipCasopisa tipCasopisa, Urednik glavniUrednik, List<Urednik> urednici,
-			List<Recenzent> recenzenti, Long issn, boolean openAccess) {
+			List<Recenzent> recenzenti, List<Korisnik> clanovi, Long issn, boolean openAccess) {
 		super();
 		this.id = id;
 		this.naziv = naziv;
@@ -54,8 +57,17 @@ public class Casopis implements Serializable {
 		this.glavniUrednik = glavniUrednik;
 		this.urednici = urednici;
 		this.recenzenti = recenzenti;
+		this.clanovi = clanovi;
 		this.issn = issn;
 		this.openAccess = openAccess;
+	}
+
+	public List<Korisnik> getClanovi() {
+		return clanovi;
+	}
+
+	public void setClanovi(List<Korisnik> clanovi) {
+		this.clanovi = clanovi;
 	}
 
 	public Urednik getGlavniUrednik() {

@@ -24,11 +24,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import root.naucnaCentrala.model.FormFieldsDto;
 import root.naucnaCentrala.model.FormSubmissionDto;
 import root.naucnaCentrala.model.Korisnik;
-import root.naucnaCentrala.services.UserService;
+import root.naucnaCentrala.services.KorisnikService;
 
 @Controller
 @RequestMapping("/user")
-public class UserController {
+public class KorisnikController {
 
 	@Autowired
 	private TaskService taskService;
@@ -40,7 +40,7 @@ public class UserController {
 	private FormService formService;
 
 	@Autowired
-	private UserService userService;
+	private KorisnikService userService;
 
 	@GetMapping(path = "/getRegister", produces = "application/json")
 	public @ResponseBody FormFieldsDto getRegisterFF() {
