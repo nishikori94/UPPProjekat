@@ -2,8 +2,8 @@ naucnaCentrala.controller('urednikPregledRecenzija', [
 		'$rootScope', '$scope',
 		'$state',
 		'$http',
-		'$stateParams',
-		function($rootScope, $scope, $state, $http, $stateParams) {
+		'$stateParams', 'FileSaver', 'Blob',
+		function($rootScope, $scope, $state, $http, $stateParams, FileSaver, Blob) {
 
 			 $scope.model = {};
 

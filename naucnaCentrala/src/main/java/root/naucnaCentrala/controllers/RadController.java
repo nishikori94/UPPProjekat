@@ -106,7 +106,7 @@ public class RadController {
 
 		// disposition = attachment - for download
 		headers.setContentDispositionFormData("attachment; filename=\"%s\"",
-				"C:\\Users\\Stefan\\Downloads\\KA1_Prijavni_formular_Vuk_Boskovic.pdf");
+				putanja);
 		headers.setCacheControl("must-revalidate, post-check=0, pre-check=0");
 		return new ResponseEntity<>(content, headers, HttpStatus.OK);
 	}
@@ -127,7 +127,7 @@ public class RadController {
 
 		// disposition = attachment - for download
 		headers.setContentDispositionFormData("attachment; filename=\"%s\"",
-				"C:\\Users\\Stefan\\Downloads\\KA1_Prijavni_formular_Vuk_Boskovic.pdf");
+				putanja);
 		headers.setCacheControl("must-revalidate, post-check=0, pre-check=0");
 		return new ResponseEntity<>(content, headers, HttpStatus.OK);
 	}

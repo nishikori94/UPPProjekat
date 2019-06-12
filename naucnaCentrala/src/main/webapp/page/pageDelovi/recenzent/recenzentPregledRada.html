@@ -22,7 +22,7 @@
 				<p>Naslov rada:</p>
 				<h3>{{rad}}</h3>
 				<button class="btn btn-primary mt-3 mb-3" name='preuzmiRad'
-					ng-click="preuzmiRad(rad.id)">Preuzmi rad</button>
+					ng-click="preuzmiRad(rad)">Preuzmi rad</button>
 
 
 				<div ng-repeat="property in properties.formFields">
@@ -34,7 +34,7 @@
 							<span class="input-group-text" id="inputGroup-sizing-default">{{property.label}}</span>
 						</div>
 						<input type="text" ng-model="model[property.id]"
-							name="property.label" required="" class="form-control"
+							name="property.label" class="form-control"
 							aria-label="Default" aria-describedby="inputGroup-sizing-default">
 					</div>
 
