@@ -11,20 +11,8 @@ public class EmailServiceImpl {
     @Autowired
     public JavaMailSender emailSender;
 
-    public void sendSimpleMessage(
-            String to) {
-    	System.out.println("safasas");
-        String text="safas";
-        String subject ="safasf";
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setTo(to);
-        message.setSubject(subject);
-        message.setText(text);
-        emailSender.send(message);
-    }
-
     public void mailPotvrdePrijaveRada(String to){
-        String text="Prijavljen novi rad!";
+        String text="Postovani, Uspesno ste prijavili novi rad! Nakon recenziranja cete dobiti informacije da li je rad prihvacen. Pozdrav!";
         String subject ="Prijava rada";
         SimpleMailMessage message= new SimpleMailMessage();
         message.setTo(to);
@@ -34,7 +22,7 @@ public class EmailServiceImpl {
     }
 
     public void ispravkaFormataRada(String to){
-        String text="Format rada mora biti ispravljen u roku od 20 minuta, u suprotnom ce biti izbrisan.";
+        String text="Postovani, Format rada mora biti ispravljen u roku od 20 minuta, u suprotnom ce biti izbrisan i moracete ponovo da ga prijavite. Pozdrav!";
         String subject ="Neispravan format rada";
         SimpleMailMessage message= new SimpleMailMessage();
         message.setTo(to);
@@ -44,7 +32,7 @@ public class EmailServiceImpl {
     }
 
     public void odbijenRad(String to){
-        String text="Vas rad je odbijen, molimo prijavite novi.";
+        String text="Postovani, Vas rad je odbijen, molimo Vas pokusajte ponovo. Pozdrav!";
         String subject ="Rad odbijen";
         SimpleMailMessage message= new SimpleMailMessage();
         message.setTo(to);
@@ -54,7 +42,7 @@ public class EmailServiceImpl {
     }
 
     public void prihvacenRad(String to){
-        String text="Vas rad je uspesno prihvacen i objavljen u casopisu.";
+        String text="Postovani, Vas rad je uspesno prihvacen i objavljen u casopisu. Cestitamo! Pozdrav!";
         String subject ="Rad prihvacen";
         SimpleMailMessage message= new SimpleMailMessage();
         message.setTo(to);
@@ -64,7 +52,7 @@ public class EmailServiceImpl {
     }
 
     public void prihvacenRadUzDoradu(String to){
-        String text="Vas rad je prihvacen, uz potrebnu doradu, koju je potrebno izvrsiti u roku od 20min, u suprotnom ce biti odbijen.";
+        String text="Postovani, Imate 20 minuta vremena da ispravite greske u radu da bi bio prihvacen. U suprotnom cemo ga morati odbiti. Pozdrav!";
         String subject ="Rad prihvacen uz doradu";
         SimpleMailMessage message= new SimpleMailMessage();
         message.setTo(to);
@@ -74,7 +62,7 @@ public class EmailServiceImpl {
     }
 
     public void notifikacijaUrednikaNaucne(String to){
-        String text="Potrebno je da odaberete recenzente za novi rad.";
+        String text="Postovani, Potrebno je da odaberete 2 recenzenta za novopristigli rad. Pozdrav!";
         String subject ="Recenzija rada";
         SimpleMailMessage message= new SimpleMailMessage();
         message.setTo(to);
